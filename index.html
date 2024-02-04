@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./styles/index.css">
+        
+    </head> 
+    <body>
+        <div class="container">
+            <div >
+                <h1 class = "header_text">Wanna be my valentines?</h1>
+            </div>
+            <div class="gif_container">
+                <img id="gif" src="https://media.giphy.com/media/lMk7X31H52ZGCWdVhD/giphy.gif" alt="Cute animated illustration">
+            </div>
+            <div class = "buttons">
+                <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
+                <button class="btn" id = "noButton" onmouseover="moveButton()">No</button>
+                <script>
+                    let noSrc = "https://media.giphy.com/media/in9eEK7CaNir17a7Ow/giphy.gif";
+
+                    function nextPage() {
+                        window.location.href = "yes.html";
+                    }
+                    
+                    function moveButton() {
+                        let image = document.getElementById("gif");
+                        let button = document.getElementById('noButton');
+
+                        if (image.src !== noSrc) {
+                            image.src=noSrc;
+                        }
+
+                        var x = Math.random() * (window.innerWidth - (3 * button.offsetWidth));
+                        var y = Math.random() * (window.innerHeight - (2 * button.offsetHeight));
+
+                        button.style.left = `${x}px`;
+                        button.style.top = `${y}px`;
+                    }
+                </script> 
+            </div>
+        </div>
+    </body> 
+</html>
